@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "SWCompression",
+    name: "SWCompressionTAR",
     products: [
         .library(
-            name: "SWCompression",
-            targets: ["SWCompression"]),
+            name: "SWCompressionTAR",
+            targets: ["SWCompressionTAR"]),
     ],
     dependencies: [
         // SWCOMP: Uncomment the line below to build swcomp example program.
@@ -23,10 +23,10 @@ let package = Package(
         //     path: "Sources",
         //     sources: ["swcomp"]),
         .target(
-            name: "SWCompression",
+            name: "SWCompressionTAR",
             dependencies: ["BitByteData"],
             path: "Sources",
-            sources: ["Common", "7-Zip", "BZip2", "Deflate", "GZip", "LZ4", "LZMA", "LZMA2", "TAR", "XZ", "ZIP", "Zlib"]),
+            sources: ["Common", "TAR"]),
     ],
     swiftLanguageVersions: [.v5]
 )
