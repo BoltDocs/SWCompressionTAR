@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SWCompression",
+    name: "SWCompressionTAR",
     platforms: [
         .macOS(.v10_13),
         .iOS(.v11),
@@ -11,26 +11,19 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "SWCompression",
-            targets: ["SWCompression"]),
+            name: "SWCompressionTAR",
+            targets: ["SWCompressionTAR"]),
     ],
     dependencies: [
         .package(name: "BitByteData", url: "https://github.com/tsolomko/BitByteData",
                  from: "2.0.0"),
-        .package(name: "SwiftCLI", url: "https://github.com/jakeheis/SwiftCLI",
-                 from: "6.0.0"),
     ],
     targets: [
         .target(
-            name: "SWCompression",
+            name: "SWCompressionTAR",
             dependencies: ["BitByteData"],
             path: "Sources",
-            sources: ["Common", "7-Zip", "BZip2", "Deflate", "GZip", "LZ4", "LZMA", "LZMA2", "TAR", "XZ", "ZIP", "Zlib"]),
-        .target(
-            name: "swcomp",
-            dependencies: ["SWCompression", "SwiftCLI"],
-            path: "Sources",
-            sources: ["swcomp"]),
+            sources: ["Common", "TAR"]),
     ],
     swiftLanguageVersions: [.v5]
 )
